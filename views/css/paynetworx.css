@@ -1,0 +1,124 @@
+
+.paynetworx-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+.paynetworx-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+.paynetworx-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+.paynetworx-field {
+    margin-bottom: 25px;
+    position: relative;
+    text-align: left; /* Ensure labels align left */
+}
+.paynetworx-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+.paynetworx-input-wrapper {
+    position: relative;
+}
+/* Force specificity with input[type] */
+input.paynetworx-input {
+    width: 100%;
+    height: 52px;
+    padding: 10px 20px;
+    border: 1px solid #dfe1e5;
+    border-radius: 8px;
+    font-size: 17px;
+    color: #333;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+    background: #fcfcfc;
+}
+input.paynetworx-input:focus {
+    border-color: #2fb5d2;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(47, 181, 210, 0.1);
+    outline: none;
+}
+input.paynetworx-input.has-error {
+    border-color: #ff4d4f;
+    background-color: #fff1f0;
+}
+input.paynetworx-input.has-success {
+    border-color: #52c41a;
+}
+.paynetworx-error-msg {
+    display: none;
+    color: #ff4d4f;
+    font-size: 13px;
+    margin-top: 6px;
+    font-weight: 500;
+}
+.paynetworx-row {
+    display: flex;
+    gap: 25px;
+}
+.paynetworx-col {
+    flex: 1;
+}
+/* Brand Badge on the RIGHT */
+.paynetworx-brand-badge {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    color: #b0b0b0;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    pointer-events: none;
+}
+.paynetworx-brand-badge.active {
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.paynetworx-brand-badge.visa { background: #1a1f71; border-color: #1a1f71; }
+.paynetworx-brand-badge.mastercard { background: #eb001b; border-color: #eb001b; }
+.paynetworx-brand-badge.amex { background: #2e77bc; border-color: #2e77bc; }
+.paynetworx-brand-badge.discover { background: #ff6000; border-color: #ff6000; }
+
+.paynetworx-submit-btn {
+    width: 100%;
+    height: 52px;
+    background: #2fb5d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 10px;
+}
+.paynetworx-submit-btn:hover {
+    background: #2592a9;
+}
+.paynetworx-submit-btn:active {
+    transform: scale(0.99);
+}
