@@ -16,7 +16,7 @@ class PaynetworxApi
         $this->baseUrl  = ($mode === 'live') ? self::URL_LIVE : self::URL_TEST;
     }
 
-    public function authCapture($amount, $currency, $cardData, $billingData = [], $cartId = 0)
+    public function authCapture($amount, $currency, $cardData, $billingData = [], $cartId = 0, $taxAmount = 0.0)
     {
         $pan      = (string) $cardData['pan'];
         $expMonth = str_pad((string) $cardData['exp_month'], 2, '0', STR_PAD_LEFT);
@@ -53,6 +53,7 @@ class PaynetworxApi
         $payload = [
             'Amount' => [
                 'Total'    => round((float) $amount, 2),
+                'Tax'      => round((float) $taxAmount, 2),
                 'Currency' => (string) $currency,
             ],
             'PaymentMethod' => [

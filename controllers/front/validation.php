@@ -76,8 +76,12 @@ class PaynetworxValidationModuleFrontController extends ModuleFrontController
             return;
         }
 
-        $currency = $this->context->currency;
-        $total    = round((float) $cart->getOrderTotal(true, Cart::BOTH), 2);
+        $currency  = $this->context->currency;
+        $total     = round((float) $cart->getOrderTotal(true, Cart::BOTH), 2);
+        $taxAmount = round(
+            $cart->getOrderTotal(true, Cart::BOTH) - $cart->getOrderTotal(false, Cart::BOTH),
+            2
+        );
 
         $cardData = [
             'pan'       => $rawNumber,
@@ -118,7 +122,7 @@ class PaynetworxValidationModuleFrontController extends ModuleFrontController
                 1, null, 'Cart', (int) $cart->id, true
             );
 
-            $result = $api->authCapture($total, $currency->iso_code, $cardData, $billingData, (int) $cart->id);
+            $result = $api->authCapture($total, $currency->iso_code, $cardData, $billingData, (int) $cart->id, $taxAmount);
 
             PrestaShopLogger::addLog(
                 'Paynetworx: gateway response cart=' . (int) $cart->id
